@@ -10,6 +10,7 @@ inventory = {
     }
 }
 
-@app.get("/get-item/{item_id}")
-def get_item(item_id: int):
+# passing multiple arguments into API end point
+@app.get("/get-item/{item_id}/{name}")
+def get_item(item_id: int, name: str):
     return inventory[item_id]
