@@ -1,0 +1,1 @@
+A project that incorporates Flask as web server and SQLite as database to store Players and their personal achievements in different games
