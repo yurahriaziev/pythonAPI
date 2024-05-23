@@ -24,7 +24,7 @@ def add_player():
 # database testing
 @app.route('/player-data')
 def view_player_data():
-    data = tracker.cur.execute('SELECT * FROM players').fetchall()
+    data = tracker.cur.execute('SELECT rowid, * FROM players').fetchall()
     print(data)
     return render_template('player_data.html', data=data)
 
