@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add Player</title>
+    </head>
+    <body>
+        <div>
+            <h1>Add A Player Here</h1>
+            <p>Note. In order to add acheivements to this player you must set up a password</p>
+        </div>
+        <div>
+            <form action="" method="post">
+                <input name="username" type="text" placeholder="Player Username" value="{{request.form.username}}">
+                <input name="game1" type="text" placeholder="Game 1" value="{{request.form.game1}}">
+                <input name="game2" type="text" placeholder="Game 2" value="{{request.form.game2}}">
+                <input type="submit" value="Add Player">
+            </form>
+        </div>
+    </body>
+</html>
