@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+          background-color: #dddddd;
+        }
+        </style>
+        </head>
+    <body>
+        {% extends "layout.html" %}
+        {% block content %}
+        <h2>Players</h2>
+        <table>
+            <tr>
+                <th>Player Username</th>
+                <th>Player Games</th>
+            </tr>
+            {% for row in data %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% endblock %}
+    </body>
+</html>
