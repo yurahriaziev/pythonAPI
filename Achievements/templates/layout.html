@@ -5,8 +5,10 @@
     </head>
     <body>
         <div>
+            <button><a href="{{url_for('home')}}">Home</a></button>
             <button><a href="{{url_for('add_player')}}">Add Player</a></button>
             <button><a href="{{url_for('view_player_data')}}">Show Players</a></button>
+            <button><a href="{{url_for('track_achiev')}}">Track Achiev</a></button>
             {% block content %}
             {% endblock %}
         </div>
