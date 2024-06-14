@@ -22,17 +22,28 @@
         {% extends "layout.html" %}
         {% block content %}
         <h2>Players</h2>
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+          <p>{{ message }}</p>
+          {% endfor %}
+        {% endif %}
+        {% endwith %}
+
         <table>
             <tr>
                 <th style="width: 70px;">Player ID</th>
                 <th>Player Username</th>
                 <th>Player Games</th>
+                <th>Action</th>
             </tr>
             {% for row in data %}
             <tr>
                 <td>{{ row[0] }}</td>
                 <td>{{ row[1] }}</td>
                 <td>{{ row[2] }}</td>
+                <td><button><a href="{{url_for('home')}}">Add Achiev</a></button><button><a href="{{url_for('delete_user_route', user_id=row[0])}}">Delete Plr</a></button></td>
             </tr>
             {% endfor %}
         </table>
