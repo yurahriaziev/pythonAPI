@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div>
+            {% extends 'layout.html' %}
+            {% block content %}
+            <h1>Track an Achievement</h1>
+            <div>
+                <h2>Lets add an achievement for {{ user[1] }}</h2>
+            </div>
+            <div>
+                <form action="" method="post">
+                    <input name="game" type="text" placeholder="Achievement's Game" value="{{request.form.game}}">
+                    <input name="title" type="text" placeholder="Achievement Title" value="{{request.form.title}}">
+                    <input type="submit" value="Add Achievement">
+                </form>
+            </div>
+            {% endblock %}
+        </div>
+    </body>
+</html>

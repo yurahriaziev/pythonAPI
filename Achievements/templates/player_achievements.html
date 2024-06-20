@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Player Achievs</title>
+    <style>
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+          background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+    {% extends "layout.html" %}
+    {% block content %}
+    <h2>{{ user[1] }}'s Achievements</h2>
+    {% if cur_amount > 0 %}
+        <table>
+            <tr>
+                <th>Game</th>
+                <th>Achiev Title</th>
+            </tr>
+            {% for achiev in achievs %}
+                <tr>
+                    <td>{{ achiev[1] }}</td>
+                    <td>{{ achiev[0] }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <h2>No achievements yet. Lets add one!</h2>
+        <button><a href="{{url_for('track_achiev', user_id=user[0])}}">Add Achiev</a></button>
+    {% endif %}
+    {% endblock %}
+</body>
+</html>
